@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar><ion-buttons slot="start">
+      <ion-back-button defaultHref="employee-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="updateempForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size=" 12">
+          <ion-item>
+            <ion-label>First Name</ion-label>
+            <ion-input type="text" formControlName="fName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Middle Name</ion-label>
+            <ion-input type="text" formControlName="mName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Last Name</ion-label>
+            <ion-input type="text" formControlName="lName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Male</ion-label>
+            <ion-radio slot="start" [checked]="gender === 'Male'"
+              (click)="gender = 'Male';onSelectingGender()">
+            </ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Female</ion-label>
+            <ion-radio slot="start" [checked]="gender === 'Female'"
+              (click)="gender = 'Female';onSelectingGender()">
+            </ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>DOB</ion-label>
+            <ion-datetime displayFormat="MM DD YY" formControlName="dob"></ion-datetime>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="text" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Confirm Password</ion-label>
+            <ion-input type="text" formControlName="cpassword"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Mobile</ion-label>
+            <ion-input type="tel" formControlName="mobile"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label> I accept terms and conditions</ion-label>
+            <ion-checkbox slot="start" formControlName="cond"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button expand="block" type="submit" (click)="onSubmit(updateempForm.value)">Submit</ion-button>
+    </ion-grid>
+  </form>
+</ion-content>
